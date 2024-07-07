@@ -1,0 +1,5 @@
+.env
+.git
+work3/work3/__pycache__
+work3/v1/__pycache__
+work3/v1/migrations/__pycache__
