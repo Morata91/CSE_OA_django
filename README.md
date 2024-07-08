@@ -22,7 +22,7 @@ curl  http://127.0.0.1:8000/v1/sales/
 
 ### 5. 全削除
 ```bash
-curl -X DELETE http://127.0.0.1:8000/v1/stocks/
+curl -X DELETE http://127.0.0.1:8000/v1/stocks
 ```
 
 
@@ -78,3 +78,8 @@ curl -d '{"name": "aaa", "price": 80}' -H 'Content-Type: application/json' http:
 curl http://127.0.0.1:8000/v1/sales
 # {"sales":480.0}
 ```
+
+
+
+
+sudo tail -n 50 /var/log/httpd/error_log

@@ -85,7 +85,6 @@ DATABASES = {
         'ATOMIC_REQUESTS': True,
         'OPTIONS': {
             'charset': 'utf8mb4',
-            'collation': 'utf8mb4_bin',  # 大文字小文字を区別する照合順序
         },
     }
 }
