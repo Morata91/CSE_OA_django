@@ -217,7 +217,7 @@ MySQLへ接続する（上記で設定したパスワードを入力する）
 mysql -u root -p
 ```
 
-# パスワード設定
+パスワード設定
 mysql> 
 ```
 ALTER USER 'root'@'localhost' identified BY 'kjn3Ak*kWe24';
