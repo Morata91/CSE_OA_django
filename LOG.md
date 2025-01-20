@@ -3,29 +3,45 @@ WebサーバーにはApacheを使用
 ### 参考にしたもの
 - 7/4実施 オンラインアセスメント対策講座
 ## Apacheのインストール
+yumのアップデート
 ```bash
-# yumのアップデート
 sudo yum update -y
+```
 
-# Apacheのインストール
+Apacheのインストール
+```
 sudo yum install -y httpd httpd-devel
+```
+```
 httpd -v
+```
+```
 # Server version: Apache/2.4.59 ()
+```
 
-# Apacheの起動
+Apacheの起動
+```
 sudo systemctl start httpd
+```
 
-# Apacheの状態確認
+Apacheの状態確認
+```
 sudo systemctl status httpd
+```
 
-# 自動起動設定
+自動起動設定
+```
 sudo systemctl enable httpd
+```
 
-# Apache自動起動設定の確認
+Apache自動起動設定の確認
+```
 sudo systemctl is-enabled httpd
+```
+```bash
 # enabled
 ```
-## index.htmlを作成
+index.htmlを作成
 ```html
 # /var/www/html/index.html
 AWS
@@ -33,6 +49,8 @@ AWS
 ## 確認
 ```bash
 curl http://54.64.143.21/
+```
+```bash
 # AWS
 ```
 
@@ -122,13 +140,22 @@ Django+MySQL(+mod_wsgi)で、商品在庫管理APIの実装
 ### MySQLのインストール
 ```bash
 sudo yum remove -y mariadb-*
+```
+```bash
 sudo yum localinstall -y https://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
+```
+```bash
 sudo yum install -y --enablerepo=mysql80-community mysql-community-server
+```
 
-#DjangoからMySQLを操作するためのドライバ
+DjangoからMySQLを操作するためのドライバ
+```bash
 sudo yum install -y mysql-community-devel
-
+```
+```bash
 mysql --version
+```
+```bash
 # mysql  Ver 8.0.38 for Linux on x86_64 (MySQL Communaaaity Server - GPL)
 ```
 
@@ -165,30 +192,47 @@ mod_wsgi
 ```
 
 ### MySQLの設定
+MySQLの起動
 ```bash
-#　MySQLの起動
 sudo systemctl start mysqld.service
+```
 
-#　起動確認
+起動確認
+```
 sudo systemctl status mysqld.service
+```
 
-#　サーバー起動時にMySQLを自動起動するよう設定
+サーバー起動時にMySQLを自動起動するよう設定
+```
 sudo systemctl enable mysqld.service
+```
 
-# 初期パスワードを確認
+初期パスワードを確認
+```
 sudo cat /var/log/mysqld.log
+```
 
-# MySQLへ接続する（上記で設定したパスワードを入力する）
+MySQLへ接続する（上記で設定したパスワードを入力する）
+```
 mysql -u root -p
+```
 
 # パスワード設定
-mysql> ALTER USER 'root'@'localhost' identified BY 'kjn3Ak*kWe24';
+mysql> 
+```
+ALTER USER 'root'@'localhost' identified BY 'kjn3Ak*kWe24';
+```
 
-#データベース作成
-mysql> create database cse_oa_db;
+データベース作成
+mysql> 
+```
+create database cse_oa_db;
+```
 
-#　MySQL切断
-mysql> exit
+MySQL切断
+mysql> 
+```
+exit
 ```
 
 ### Djangoプロジェクトの設定
@@ -217,6 +261,8 @@ DATABASES = {
 #### マイグレーション
 ```bash
 python3 manage.py makemigrations
+```
+```
 python3 manage.py migrate
 ```
 
