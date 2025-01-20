@@ -67,11 +67,14 @@ sudo htdigest -c /etc/httpd/.htdigest "Secret Page" aws
 </Directory>
 ```
 ## 確認
+Apacheの再起動
 ```bash
-# Apacheの再起動
 sudo systemctl restart httpd
-
+```
+```bash
 curl http://54.64.143.21/secret
+```
+```
 # <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 # <html><head>
 # <title>401 Unauthorized</title>
@@ -84,8 +87,12 @@ curl http://54.64.143.21/secret
 # browser doesn't understand how to supply
 # the credentials required.</p>
 # </body></html>
+```
 
+```
 curl -L --digest -u aws:candidate http://xx.xx.xx.xx/secret
+```
+```
 # SUCCESS
 ```
 
@@ -128,6 +135,8 @@ mysql --version
 ### 必要なものをインストール
 ```bash
 sudo yum install -y python3-devel gcc gcc-c++
+```
+```
 sudo yum install -y git
 ```
 
@@ -135,6 +144,8 @@ sudo yum install -y git
 Githubプライベートリポジトリ経由で、EC2上に持ってきた
 ```bash
 cd /var/www/
+```
+```
 git clone https://github.com/Morata91/CSE_OA_django.git
 ```
 
